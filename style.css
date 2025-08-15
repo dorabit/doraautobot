@@ -1,21 +1,162 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
-    text-align: center;
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
 }
 
-header {
+body {
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* شريط التنقل */
+nav {
     background: #0078ff;
     color: white;
-    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.card {
-    display: inline-block;
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffea00;
+}
+
+/* القسم الرئيسي */
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #0078ff, #00d4ff);
+    color: white;
+    animation: fadeIn 1s ease-in;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    margin-bottom: 20px;
+}
+
+header button {
+    padding: 10px 25px;
     background: white;
-    margin: 10px;
-    padding: 20px;
+    color: #0078ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+header button:hover {
+    background: #ddd;
+}
+
+header .social a {
+    margin: 0 5px;
+    font-size: 1.5em;
+    color: white;
+    transition: 0.3s;
+}
+
+header .social a:hover {
+    color: #ffea00;
+}
+
+/* الخدمات */
+#services, #projects, #contact {
+    padding: 40px 20px;
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+}
+
+.cards, .projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card, .project-card {
+    background: white;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 15px;
+    width: 250px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover, .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* قسم التواصل */
+form {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #0078ff;
+}
+
+form button {
+    background: #0078ff;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: #005fcc;
+}
+
+/* الفوتر */
+footer {
+    background: #0078ff;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* حركات أنيميشن */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
